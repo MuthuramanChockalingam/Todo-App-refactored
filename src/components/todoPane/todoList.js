@@ -3,7 +3,7 @@ import context from '../../core/context';
 import TodoManager from '../../services/todoManager';
 import Todo from './todo';
 
-const AddList = () => {
+const TodoList = () => {
 	const { todos, filter } = context.state;
 	const filteredTodos = TodoManager.filterTodos(todos, filter);
 
@@ -12,4 +12,4 @@ const AddList = () => {
 	);
 };
 
-export default AddList;
+export default TodoList;

@@ -1,5 +1,5 @@
 import TodoInput from './todoInput';
-import AddList from './todoList';
+import TodoList from './todoList';
 import ToggleAllButton from './toggleAllButton';
 import ClearButton from './clearButton';
 import FilterBar from './filterBar';
@@ -15,7 +15,7 @@ const TodoPane = () => {
 			<Grid container="true" justify="center" alignItems="flex-end"> { ToggleAllButton() }
 				{ TodoInput() } { ActionButton() }
 			</Grid>
-			<div> { AddList() } </div>
+			<div> { TodoList() } </div>
 			<div> { ClearButton() } </div>
 			<div> { FilterBar() } </div>
 			<div> { ThemeSelect() } </div>
