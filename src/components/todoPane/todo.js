@@ -3,11 +3,10 @@ import context from '../../core/context';
 import { Checkbox, Grid, Box } from '@material-ui/core';
 import ClearIcon from '@material-ui/icons/Clear';
 
-const ToggleButton = (todo) =>
+const ToggleButton = (todo, completed) =>
 	<Checkbox
 		className="todo-checkbox"
-		// eslint-disable-next-line react/destructuring-assignment
-		checked={ todo.completed }
+		checked={ completed }
 		onChange={ () => context.actions.toggleTodo(todo) }
 	/>;
 
@@ -31,7 +30,7 @@ const GridItem = (Component) =>
 const Todo = (todo) => {
 	const { id, text, completed } = todo;
 	const className = ` ${ completed ? 'todo-completed' : 'todo-active' }`;
-	const components = [ToggleButton(todo),
+	const components = [ToggleButton(todo, completed),
 		TextInput(text, todo),
 		RemoveButton(todo)];
 

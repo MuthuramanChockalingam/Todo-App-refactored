@@ -1,9 +1,7 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
-/* eslint-disable indent */
 import { React } from 'react';
 import context from '../../core/context';
 import TodoManager from '../../services/todoManager';
-import { Checkbox } from '@material-ui/core';
+import { Box, Checkbox } from '@material-ui/core';
 
 const ToggleAllButton = () => {
 	const isChecked = TodoManager.getActiveCount(context.state.todos) === 0;
@@ -11,10 +9,11 @@ const ToggleAllButton = () => {
 
 	return noTodos
 		?	null
-		:	<Checkbox
+		:	<Box component="span">
+			<Checkbox
 				checked={ isChecked }
 				onChange={ () => context.actions.toggleTodos(!isChecked) }
-		  />;
+			/></Box>;
 };
 
 export default ToggleAllButton;

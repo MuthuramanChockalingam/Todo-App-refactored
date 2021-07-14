@@ -1,13 +1,13 @@
 import { React } from 'react';
 import context from '../../core/context';
-import { Select, InputLabel, MenuItem } from '@material-ui/core';
+import { Select, InputLabel, MenuItem, Box } from '@material-ui/core';
 
 const ThemeOption = (theme) => <MenuItem key={ theme } value={ theme }>
 	{theme}
 </MenuItem>;
 
 const ThemeSelect = () =>
-	<div className="theme-select">
+	<Box className="theme-select">
 		<InputLabel>Theme: </InputLabel>
 		<Select
 			value={ context.state.theme }
@@ -15,6 +15,6 @@ const ThemeSelect = () =>
 		>
 			{ context.config.themes.map(ThemeOption)}
 		</Select>
-	</div>;
+	</Box>;
 
 export default ThemeSelect;

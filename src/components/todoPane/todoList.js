@@ -1,3 +1,4 @@
+import { Box } from '@material-ui/core';
 import { React } from 'react';
 import context from '../../core/context';
 import TodoManager from '../../services/todoManager';
@@ -8,7 +9,7 @@ const TodoList = () => {
 	const filteredTodos = TodoManager.filterTodos(todos, filter);
 
 	return (
-		<div> { filteredTodos.map(Todo) } </div>
+		<Box> { filteredTodos.map(Todo) } </Box>
 	);
 };
 

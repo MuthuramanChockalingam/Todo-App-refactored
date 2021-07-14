@@ -5,38 +5,22 @@ import TodoPane from './components/todoPane';
 import context from './core/context';
 import TaskPane from './components/taskPane';
 import ticker from './services/ticker';
-import ToggleAllButton from './components/todoPane/toggleAllButton';
-import TodoInput from './components/todoPane/todoInput';
-import ActionButton from './components/todoPane/actionButton';
-import { Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 
-// eslint-disable-next-line max-lines-per-function
 const App = () => {
 	useEffect(TaskManager.init, []);
 	useEffect(ticker.state, []);
 
 	return (
-		<div className={ `App ${ context.state.theme }` }>
+		<Box className={ `App ${ context.state.theme }` } minHeight="100%">
 			<Grid container="true">
-				<Grid item="true" xs={ 6 } className="pane todo-pane">
-					<h3>Todo</h3>
-					<Grid
-						container="true"
-						justify="center"
-						alignItems="flex-end"
-					>
-						<Grid item="true" xs={ 2 }>
-							{ ToggleAllButton() }
-						</Grid>
-						{ TodoInput() } { ActionButton() }
-					</Grid>
+				<Grid item="true" xs={ 6 }>
 					{ TodoPane() } </Grid>
-				<Grid item="true" xs={ 6 } className="pane task-pane">
-					<h3>Task</h3>
+				<Grid item="true" xs={ 6 }>
 					{ TaskPane() }
 				</Grid>
 			</Grid>
-		</div>
+		</Box>
 	);
 };
 
