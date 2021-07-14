@@ -9,7 +9,7 @@ const Header = () =>
 		<h3>Todo</h3>
 		<Grid
 			container="true"
-			justify="center"
+			justifyContent="center"
 			alignItems="flex-end"
 		>
 			<Grid item="true" xs={ 2 }>{ ToggleAllButton() }</Grid>

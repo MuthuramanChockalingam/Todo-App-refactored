@@ -29,7 +29,7 @@ const Task = (task) => {
 		<Grid
 			key={ id }
 			container="true"
-			justify="center"
+			justifyContent="center"
 			alignItems="center"
 		>
 			<Grid item="true" xs={ 2 }> { AddButton(task)} </Grid>
