@@ -3,9 +3,6 @@
 	min-width: max-content;
 	min-height: max-content;
 }
-.pane {
-	overflow: auto;
-}
 .light .todo-pane {
 	background: beige;
 }

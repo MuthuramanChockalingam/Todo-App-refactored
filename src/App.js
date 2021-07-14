@@ -12,7 +12,7 @@ const App = () => {
 	useEffect(ticker.state, []);
 
 	return (
-		<Box className={ `App ${ context.state.theme }` } minHeight="100%">
+		<Box className={ `App ${ context.state.theme }` }>
 			<Grid container="true">
 				<Grid item="true" xs={ 6 }>
 					{ TodoPane() } </Grid>

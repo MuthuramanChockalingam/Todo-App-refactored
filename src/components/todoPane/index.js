@@ -8,7 +8,7 @@ import Header from './header';
 const TodoPane = () => {
 
 	return (
-		<Box className="pane todo-pane">
+		<Box className="todo-pane" height="100vh" overflow="auto">
 			{ Header() }
 			{ TodoList() }
 			{ ClearButton() }
