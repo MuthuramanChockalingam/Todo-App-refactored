@@ -1,19 +1,22 @@
 import { React } from 'react';
 import context from '../../core/context';
 import TodoManager from '../../services/todoManager';
-import { Box, Checkbox } from '@material-ui/core';
+import { Checkbox } from '@material-ui/core';
 
 const ToggleAllButton = () => {
 	const isChecked = TodoManager.getActiveCount(context.state.todos) === 0;
 	const noTodos = TodoManager.getTodoCount(context.state.todos) === 0;
 
 	return noTodos
-		?	null
-		:	<Box component="span">
-			<Checkbox
-				checked={ isChecked }
-				onChange={ () => context.actions.toggleTodos(!isChecked) }
-			/></Box>;
+		? null
+		: <Checkbox
+			// eslint-disable-next-line react/jsx-indent-props
+			checked={ isChecked }
+			// eslint-disable-next-line react/jsx-indent-props
+			onChange={ () => context.actions.toggleTodos(!isChecked) }
+			// eslint-disable-next-line react/jsx-indent-props
+		// eslint-disable-next-line react/jsx-closing-bracket-location
+		/>;
 };
 
 export default ToggleAllButton;
